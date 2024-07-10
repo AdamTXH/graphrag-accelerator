@@ -12,6 +12,16 @@ prompts
 testdata
 .scripts/
 
+
+# Ignore secrets
+lancedb/
+input/
+documents/
+output/
+cache/
+settings.yaml
+notebooks/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
