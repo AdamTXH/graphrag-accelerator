@@ -11,7 +11,9 @@ To run the graph rag library:
 To create knowledge graph:
 - Configure settings in settings.yaml, api type, models, chunk size, file type, etc.
 
-`python -m graphrag.index --root ./graphrag`
+`cd graphrag`
+
+`python -m graphrag.index --root .`
 
 - Results will be saved into ./graphrag/output/datetime. Contains some log files and multiple .parquet files.
 

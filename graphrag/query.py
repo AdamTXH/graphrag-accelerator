@@ -13,7 +13,7 @@ def main():
     print(f"Received query: {query}")
     
     start_time = time.time()
-    run_local_search(data_dir="/home/adamtay/graphrag-accelerator/graphrag/output/20240710-131106/artifacts",
+    run_local_search(data_dir="/home/adamtay/graphrag-accelerator/graphrag/output/20240710-163051/artifacts",
                     root_dir="/home/adamtay/graphrag-accelerator/graphrag",
                     community_level=2,
                     response_type="clear and conciose", # Free form text describing the response type and format, can be anything, e.g. Multiple Paragraphs, Single Paragraph, Single Sentence, List of 3-7 Points, Single Page, Multi-Page Report
