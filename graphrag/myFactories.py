@@ -163,7 +163,19 @@ class myGlobalSearch(GlobalSearch):
             completion_time=time.time() - start_time,
             llm_calls=map_llm_calls + reduce_response.llm_calls,
             prompt_tokens=map_prompt_tokens + reduce_response.prompt_tokens,
-        )
+        ), context_chunks
+        
+    # def search(
+    #     self,
+    #     query: str,
+    #     conversation_history: ConversationHistory | None = None,
+    #     **kwargs: Any,
+    # ) -> GlobalSearchResult:
+    #     """Perform a global search synchronously."""
+    #     response, context_chunks = asyncio.run(self.asearch(query, conversation_history))
+    #     return response, context_chunks 
+        
+    
 
 def get_llm(config: GraphRagConfig) -> ChatOpenAI:
     """Get the LLM client."""
@@ -289,7 +301,7 @@ def my_get_global_search_engine(
     token_encoder = tiktoken.get_encoding(config.encoding_model)
     gs_config = config.global_search
 
-    return GlobalSearch(
+    return myGlobalSearch(
         llm=get_llm(config),
         context_builder=GlobalCommunityContext(
             community_reports=reports, entities=entities, token_encoder=token_encoder
